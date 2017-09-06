@@ -31,22 +31,17 @@
 
     <ul>
       <li class='friend' ng-repeat="bud in friends | filter:searchTerm | orderBy: sortDirection + sortProp" >
-        <img ng-src="{{bud.pic_square}}">
-        {{ bud.name }}
-        Location: {{ bud.location.city }}, {{ bud.location.state }}, {{ bud.location.country }}, <br>
-        Status: {{ bud.status.message }} <br>
-        Friends: {{ bud.friends_count }}
         <hr>
-        <img class="profile-pic" src='http://placebear.com/50/50.jpg'>
-        <h3>Cali Fornia</h3>
+        <img class="profile-pic" src='{{bud.pic_square}}'>
+        <h3>{{ bud.name }}</h3>
         <div class="location">
-          Location: New Port Beach, California, United States
+          {{ bud.location.city }}, {{ bud.location.state }}, {{ bud.location.country }}
         </div>
         <div class="status">
-          Status: I hate the snow. I wish I was on the beach right now!!!
+          {{ bud.status }}
         </div>
         <div class="num-friends">
-          Friends: 1,367
+          Friends: {{ bud.friend_count }}
         </div>
       </li>
     </ul>
